@@ -12,11 +12,11 @@ export default function CreateTimerPage() {
 
   const handleSubmit = async (data) => {
     await createTimer(data);
-    navigate('/');
+    navigate('/timers');
   };
 
   return (
-    <Page title="Create Timer" backAction={{ onAction: () => navigate('/') }}>
+    <Page title="Create Timer" backAction={{ onAction: () => navigate('/timers') }}>
       <TimerForm onSubmit={handleSubmit} />
     </Page>
   );

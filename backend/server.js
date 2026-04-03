@@ -12,6 +12,7 @@ const xssClean = require('xss-clean');
 
 const timerRoutes = require('./routes/timerRoutes');
 const analyticsRoutes = require('./routes/analyticsRoutes');
+const productRoutes = require('./routes/productRoutes');
 const { errorHandler } = require('./middleware/errorHandler');
 const { apiLimiter } = require('./middleware/rateLimiter');
 
@@ -31,6 +32,7 @@ app.use('/api', apiLimiter);
 // ── Routes ───────────────────────────────────────────────────
 app.use('/api/timers', timerRoutes);
 app.use('/api/analytics', analyticsRoutes);
+app.use('/api/products', productRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

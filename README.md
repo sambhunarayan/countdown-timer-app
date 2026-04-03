@@ -47,6 +47,7 @@ npm run dev              # Starts on port 3001
 ```bash
 cd frontend
 npm install
+echo "REACT_APP_SHOP_ID=your-store.myshopify.com" > .env
 npm start                # Starts on port 3000 (proxies API to 3001)
 ```
 
@@ -61,6 +62,7 @@ npm test
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
 | GET | `/api/timers` | Shop | List all timers |
+| GET | `/api/products` | Shop | List Shopify products from the Admin API |
 | POST | `/api/timers` | Shop | Create timer |
 | PUT | `/api/timers/:id` | Shop | Update timer |
 | DELETE | `/api/timers/:id` | Shop | Delete timer |
@@ -84,6 +86,7 @@ npm test
 ## Production Notes
 
 - Replace `x-shop-id` header auth with Shopify session token verification
+- Add `SHOPIFY_ADMIN_ACCESS_TOKEN` and `SHOPIFY_STORE_DOMAIN` in `backend/.env` to load real products
 - Use Shopify Resource Picker for product/collection selection
 - Set up proper MongoDB indexes for high-traffic stores
 - Configure CDN caching for the widget JS asset

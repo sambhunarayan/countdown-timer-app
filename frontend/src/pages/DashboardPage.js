@@ -57,7 +57,8 @@ export default function DashboardPage() {
 
   return (
     <Page
-      title="Countdown Timer + Analytics"
+      title="Timers"
+      subtitle="Manage countdown timers and review their performance."
       primaryAction={{ content: 'Create Timer', onAction: () => navigate('/timers/new') }}
     >
       <Layout>

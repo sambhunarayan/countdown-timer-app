@@ -18,13 +18,13 @@ export default function EditTimerPage() {
 
   const handleSubmit = async (data) => {
     await updateTimer(id, data);
-    navigate('/');
+    navigate('/timers');
   };
 
   if (!timer) return <Page title="Edit Timer"><Spinner /></Page>;
 
   return (
-    <Page title="Edit Timer" backAction={{ onAction: () => navigate('/') }}>
+    <Page title="Edit Timer" backAction={{ onAction: () => navigate('/timers') }}>
       <TimerForm initialValues={timer} onSubmit={handleSubmit} />
     </Page>
   );
